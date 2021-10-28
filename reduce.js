@@ -26,10 +26,15 @@ Examples:
 */
 
 function vowelCount(str) {
-    let tempArr = str.toLowerCase().split('');
-    return tempArr.reduce(acc, next){
-        
-    }
+    const tempArr = str.toLowerCase().split('');
+    const resultObj = {};
+    const vowels = 'aeiou'
+    tempArr.reduce(function(acc, next){
+        if (vowels.indexOf(next) !== -1) {
+            resultObj[next] ?  resultObj[next] += 1 : resultObj[next] = 1;
+        } else return;
+    }, resultObj);
+    return resultObj;
 }
 
 /*
